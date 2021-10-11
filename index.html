@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<title>StudentListApp</title>
+	</head>
+	<body onload="FillStudentList()">
+		<header>
+			<nav class="header">
+				<a id="judul-header" href="index.html" class="judul">Student Management MiniApp</a>
+				<div class="menu">
+					<a class="index" href="index.html">Home</a>
+					<a class="about" href="about.html">About</a>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Title-->
+		<div class="container" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 25px;">
+			<br><br>
+			<h1 style="color: blueviolet; font-size: 50px; padding: 1px; text-align: center;">Student Management</h1>
+			<h1 style="font-size: 50px; text-align: center;">MiniApp</h1>
+			<hr>
+		</div>
+		
+		<!-- Form -->
+		<div class="container">
+		<div class="row">
+			<!-- Form Add student -->
+			<div class="col-sm-7">
+				<h3>Add Student</h3>
+						<button type="button" class="filbutton" data-toggle="collapse" data-target="#demo" id="formbtn" style="background-color: blueviolet;"
+							>Show Form Add New Student</button>
+				<div id="demo" class="collapse">
+					<form id="form-add-student"><br>
+						<div class="form-group">
+							<label for="NIM">Student ID (NIM)</label>
+							<input type="text" class="form-control" id="NIM">
+						</div>
+						<div class="form-group">
+							<label for="fullName">Full Name</label>
+							<input type="text" class="form-control" id="fullName">
+						</div>
+		
+						<div class="form-group">
+							<label for="Gender">Gender</label> <br />
+							<input type="radio" name="gender" id="Male" value="Male"> Male <br />
+							<input type="radio" name="gender" id="Female" value="Female"> Female <br />
+						</div>
+		
+						<label for="selfaculty">Faculty</label> <br />
+						<div class="input-group mb-3">
+							<select class="form-control" id="selfaculty">
+								<option value="0" selected>-- SELECT FACULTY --</option>
+								<option value="Pascasarjana">Pascasarjana</option>
+								<option value="Filsafat">Fakultas Filsafat</option>
+								<option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
+								<option value="FEB">Fakultas Ekonomi dan Bisnis</option>
+								<option value="Pertanian">Fakultas Pertanian</option>
+								<option value="FIK">Fakultas Ilmu Komputer</option>
+								<option value="Keperawatan">Fakultas Keperawatan</option>
+								<option value="ASMI">Akademi Sekretari Manajemen Indonesia Klabat</option>
+							</select>
+						</div>
+						<label for="selprodi">Program of Study</label> <br />
+						<div class="input-group mb-3">
+							<select class="form-control" id="selprodi">
+								<option class="0" value="0" selected>-- SELECT PROGRAM OF STUDY --</option>
+								<option class="Pascasarjana" value="Magister Manajemen">Magister Manajemen</option>
+								<option class="Pascasarjana" value="Magister Teologi">Magister Teologi</option>
+								<option class="Filsafat" value="Ilmu Filsafat">Ilmu Filsafat</option>
+								<option class="FKIP" value="Pendidikan Agama">Pendidikan Agama</option>
+								<option class="FKIP" value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+								<option class="FKIP" value="Pendidikan Ekonomi">Pendidikan Ekonomi</option>
+								<option class="FKIP" value="Pendidikan Luar Sekolah">Pendidikan Luar Sekolah</option>
+								<option class="FEB" value="Akuntansi">Akuntansi</option>
+								<option class="FEB" value="Manajemen">Manajemen</option>
+								<option class="Pertanian" value="Agroteknologi">Agroteknologi</option>
+								<option class="FIK" value="Informatika">Informatika</option>
+								<option class="FIK" value="Sistem Informasi">Sistem Informasi</option>
+								<option class="Keperawatan" value="Ners">Profesi Ners</option>
+								<option class="Keperawatan" value="Keperawatan">Keperawatan</option>
+								<option class="ASMI" value="Sekretari (D3)">Sekretari (D3)</option>
+							</select>
+						</div>
+						<br>
+						<input style="color: white; background-color: blueviolet;" type="submit" class="btn btn-primary" value="Add Student" />
+		
+					</form>
+				</div>
+			</div>
+
+			<!-- Column Divider -->
+			<div class="col-sm-1"></div>
+			
+			<!-- Filter form coloumn  -->
+			<form class="col-sm-4">
+				<h3>Filter Student By</h3>
+				<label for="selfaculty2">Faculty</label> <br />
+				<div class="input-group mb-3">
+					<select class="form-control" id="selfaculty2">
+						<option value="0" selected>-- SELECT FACULTY --</option>
+						<option value="Pascasarjana">Pascasarjana</option>
+						<option value="Filsafat">Fakultas Filsafat</option>
+						<option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
+						<option value="FEB">Fakultas Ekonomi dan Bisnis</option>
+						<option value="Pertanian">Fakultas Pertanian</option>
+						<option value="FIK">Fakultas Ilmu Komputer</option>
+						<option value="Keperawatan">Fakultas Keperawatan</option>
+						<option value="ASMI">Akademi Sekretari Manajemen Indonesia Klabat</option>
+					</select>
+					<button type="button" onclick="FilterFaculty()" class="filbutton" style="padding-right: 240px; background-color: blueviolet; text-align: center;">Show Students</button>
+				</div>
+				
+				<label for="selprodi2">Program of Study</label> 
+				<br />
+				<div class="input-group mb-3">
+					<select class="form-control" id="selprodi2">
+						<option class="0" value="0" selected>-- SELECT PROGRAM OF STUDY --</option>
+						<option class="Pascasarjana" value="Magister Manajemen">Magister Manajemen</option>
+						<option class="Pascasarjana" value="Magister Teologi">Magister Teologi</option>
+						<option class="Filsafat" value="Ilmu Filsafat">Ilmu Filsafat</option>
+						<option class="FKIP" value="Pendidikan Agama">Pendidikan Agama</option>
+						<option class="FKIP" value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+						<option class="FKIP" value="Pendidikan Ekonomi">Pendidikan Ekonomi</option>
+						<option class="FKIP" value="Pendidikan Luar Sekolah">Pendidikan Luar Sekolah</option>
+						<option class="FEB" value="Akuntansi">Akuntansi</option>
+						<option class="FEB" value="Manajemen">Manajemen</option>
+						<option class="Pertanian" value="Agroteknologi">Agroteknologi</option>
+						<option class="FIK" value="Informatika">Informatika</option>
+						<option class="FIK" value="Sistem Informasi">Sistem Informasi</option>
+						<option class="Keperawatan" value="Ners">Profesi Ners</option>
+						<option class="Keperawatan" value="Keperawatan">Keperawatan</option>
+						<option class="ASMI" value="Sekretari (D3)">Sekretari (D3)</option>
+					</select>
+					<button type="button" onclick="FilterStudy()" class="filbutton" style="padding-right: 240px; background-color: blueviolet; text-align: center;">Show Students</button>
+				</div>
+			</form>
+		</div>
+		</div>
+		<br>
+
+		<!-- List Students -->
+		<div class="container">
+			<hr>
+			<h1 style="text-align: center; font-size: 50px;">Our Students</h1>
+			<input type="text" class="form-control" onkeyup="FilterName()" id="nameSearch" placeholder="Search student by name..."><br>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>NIM</th>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Faculty</th>
+						<th>Program Study</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody id="students"></tbody>
+			</table>
+			<div id="main"></div>
+		</div>
+
+		<br><br>
+		<footer class="py-4 bg-black footer">
+			<div class="container">
+				<span class="m-0 text-center;" style="color: white; font-size : 15px">juanpetert @copyright2021</span>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="arraydata.js"></script>
+		<script type="text/javascript" src="appfunction.js"></script>
+		<script type="text/javascript" src="button.js"></script>
+		<script type="text/javascript" src="filter.js"></script>
+	</body>
+</html>
