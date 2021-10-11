@@ -1,0 +1,101 @@
+
+.header {
+	overflow: hidden;
+	background-color : blueviolet;
+	margin: 0;
+	padding: 5px 5px;
+	text-decoration: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+  }
+  
+  
+  .header a {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 20px;
+	border-radius: 4px;
+	text-decoration: none;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.judul {
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+  }
+  
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+	background-color: #ddd;
+	text-decoration: none;
+  }
+  
+  /* Style the active/current link*/
+  .header a.index {
+
+	text-decoration: none;
+  }
+
+  .header a.about {
+	text-decoration: none;
+  }
+  
+  .h1{
+	  color: blueviolet;
+	  
+  }
+  
+  /* Float the link section to the right */
+  .menu {
+	float: left;
+	text-decoration: none;
+  }
+  
+  .open-button {
+	float: left;
+	background-color: blueviolet;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 25px;
+	border-radius: 4px;
+	text-decoration: none;
+  }
+  
+  
+  .card {
+	padding: 16px;
+	text-align: center;
+	background-color: white;
+  }
+  
+  .filbutton {
+	  color: white;
+	  text-align: center;
+	  background-color: blueviolet;
+	  padding-left: 10px;
+	  padding-right: 10px;
+	  margin-top: 5px;
+  }
+
+  .footer {
+	  text-align: center;
+	  position: relative;
+	  width: 100%;
+	  bottom: 0;
+	  height: 50px;
+  }
+
+.push {
+    height: 255px; /* .push must be the same height as .footer */
+}
